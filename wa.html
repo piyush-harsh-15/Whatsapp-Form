@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    
+    <style>
+      .register .nav-tabs .nav-link:hover {
+        border: none;
+      }
+      .text-align {
+        margin-top: -5%;
+        margin-bottom: -10%;
+
+        padding: 10%;
+        margin-left: 30%;
+      }
+      .form-new {
+        margin-right: 22%;
+        margin-left: 20%;
+      }
+      .register-heading {
+        margin-left: 25%;
+        margin-bottom: 5%;
+        color: #cfc;
+      }
+      .register-heading h1 {
+        margin-left: 25%;
+        margin-bottom: 10%;
+        color: #e9ecef;
+      }
+      .register-subhead {
+          margin-left: 15%;
+          margin-right: 5%;
+          margin-bottom: 10%;
+          font-size: small;
+          color: #fff
+      }
+      .register {
+        background: -webkit-linear-gradient(left, #11998e, #38ef7d);
+        margin-top: 3%;
+        padding: 3%;
+        border-radius: 2.5rem;
+      }
+      .btnSubmit {
+        width: 50%;
+        border-radius: 1rem;
+        padding: 1.5%;
+        color: #fff;
+        background-color: #004e92;
+        border: none;
+        cursor: pointer;
+        margin-right: 6%;
+        color: rgb(236, 236, 242);
+        margin-top: 4%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container register">
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            class="tab-pane fade show active text-align form-new"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+            <h3 class="register-heading text-nowrap">Contact Form</h3>
+            <h5 class="register-subhead">Please fill this form, we'll get back to you soon.</h5>
+            <div class="row register-form">
+              <div class="col-md-12">
+                <form autocomplete="off">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="Name"
+                      id="name"
+                      class="form-control"
+                      placeholder="Your Name*"
+                      value=""
+                      required=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="Email"
+                      id="email"
+                      class="form-control"
+                      placeholder="Your Email*"
+                      value=""
+                      required=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      name="Phone"
+                      id="phone"
+                      class="form-control"
+                      placeholder="Contact Number*"
+                      value=""
+                      required=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="Purpose"
+                      id="purpose"
+                      class="form-control"
+                      placeholder="Message*"
+                      value=""
+                      required=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      name="submit"
+                      onclick="gotowhatsapp()"
+                      class="btnSubmit btn-block"
+                      value="Submit"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function gotowhatsapp() {
+            
+            var name = WhatsApp.getElementById("name").value;
+            var phone = WhatsApp.getElementById("phone").value;
+            var email = WhatsApp.getElementById("email").value;
+            var purpose = WhatsApp.getElementById("purpose").value;
+        
+            var url = "https://wa.me/919504777106?text=" 
+            + "Name: " + name + "%0a"
+            + "Phone: " + phone + "%0a"
+            + "Email: " + email  + "%0a"
+            + "Purpose: " + purpose; 
+        
+            window.open(url, '_blank').focus();
+        }
+        </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>
